@@ -29,6 +29,3 @@ document.addEventListener("DOMContentLoaded", function () {
     savedUsernameSpan.textContent = "";
     savedUsernameSpan.parentElement.classList.add("invisible");
   });
-
-  // Initialize and update the session timer using sessionStorage
- 
