@@ -29,3 +29,27 @@ document.addEventListener("DOMContentLoaded", function () {
     savedUsernameSpan.textContent = "";
     savedUsernameSpan.parentElement.classList.add("invisible");
   });
+
+  // Initialize and update the session timer using sessionStorage
+  let startTime = sessionStorage.getItem("startTime");
+  if (!startTime) {
+    startTime = Date.now();
+    sessionStorage.setItem("startTime", startTime);
+  }
+  function updateTimer() {
+    const currentTime = Date.now();
+    const elapsedMilliseconds = currentTime - startTime;
+    const minutes = Math.floor(elapsedMilliseconds / 60000);
+    const seconds = Math.floor((elapsedMilliseconds % 60000) / 1000);
+
+    minutesSpan.textContent = minutes;
+    secondsSpan.textContent = seconds;
+
+    if (minutes > 0) {
+      afterAMinuteSpan.classList.remove("d-none");
+    }
+  }
+
+  setInterval(updateTimer, 1000);
+  updateTimer();
+});
