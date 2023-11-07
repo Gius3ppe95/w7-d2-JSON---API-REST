@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     savedUsernameSpan.parentElement.classList.remove("invisible");
   }
 
-  // Save the username to localStorage when the "Salva" button is clicked
+  // Save the username to localStorage when the "Save" button is clicked
   saveButton.addEventListener("click", function () {
     const username = usernameInput.value;
     localStorage.setItem("username", username);
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     savedUsernameSpan.parentElement.classList.remove("invisible");
   });
 
-  // Delete the saved username from localStorage when the "Elimina" button is clicked
+  // Delete the saved username from localStorage when the "delete" button is clicked
   deleteButton.addEventListener("click", function () {
     localStorage.removeItem("username");
     savedUsernameSpan.textContent = "";
